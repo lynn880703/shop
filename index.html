@@ -1,0 +1,469 @@
+<html>
+
+<head>
+  <title>My Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <style>
+            *{
+            margin: 0;
+            padding: 0;
+        }
+        .logo{
+            width:20%;
+        }
+        .we{
+            background-color:#adb5bd;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn-cart{
+            position: relative;
+            background-color: transparent;
+        }
+        .btn-cart:hover{
+            cursor: pointer;
+        }
+        .btn-cart .badge{
+            position: absolute;
+            top:0;
+            right:0;
+        }
+        .dropdown-menu-right{
+            right:0;
+            left:auto;
+        }
+        .card{
+          margin-bottom:50px;
+        }
+        .blockTitle{
+          font-weight:900;
+
+          margin-bottom: 40px;
+        }
+
+  .badge-notify{
+    background:red;
+    position:relative;
+    top: -20px;
+    right: 10px;
+  }
+  .my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+  }
+  .bt{
+    background:#aaa;
+    padding: 20px;
+  }
+  .bt-logo{
+    width:100px;
+    margin-left: 20px;
+  }
+  .bt-text{
+    font-size: 20px;
+    font-weight:600;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="page-header container">
+    <h1> 
+      <span class="logo">K&G</span> 
+      <!-- 購物車 -->
+      <div style="float: right; cursor: pointer;">
+        <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+      </div>
+    </h1>
+  </div>
+
+  <!-- <button type="addNewProduct" name="addNewProduct" id="addNewProduct">Add New Product</button> -->
+    <!-- 輪播圖 -->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/衣服/rend1.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/衣服/rend2.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/img/衣服/rend3.webp" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+    <!-- 品牌介紹 -->
+    <div class="container-fluid we">
+      <div class="container">
+          <div class="row ">
+              <div class="col">
+                  <img src="/img/K&G - MarkMaker Logo.png" alt="">
+              </div>
+              <div class="col align-self-center">
+                  <h3>品牌創立</h3>
+                  <p>這個品牌的創立是由一群熱愛衣服的好朋友們相約一起做生意開始,從挑貨到比價都是由一群不懂的人操手。
+                      我們最初是從蝦皮開始販售,訂單穩定後便開始想方法創立屬於自己的網站,讓更多人發現我們的品牌！
+                      官方網站僅販售當季最熱銷款式
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- 商品區域 -->
+  <div class="container">
+    <div id="t-shit">
+      <h2 class="blockTitle">上衣</h2>
+      <div class="row">
+        <div class="col text-center">
+          <div class="card">
+              <img src="img/衣服/tw-11134201-23030-ahh4gctunbovd4.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">長袖休閑套裝</h5>
+                <p id="pice"><strong>$600</strong></p>
+                <button class="btn btn-secondary my-cart-btn" data-id="1" data-name="長袖休閑套裝" data-summary="summary 1" data-price="600" data-quantity="1" data-image="img/衣服/tw-11134201-23030-ahh4gctunbovd4.jpeg">加入購物車</button>
+              </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="card">
+              <img src="img/衣服/sg-11134201-7qvg7-lh4ox106ciuc43.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">日系古著工裝襯衫</h5>
+                <p id="pice">$869</p>
+                <button class="btn btn-secondary my-cart-btn" data-id="2" data-name="日系古著工裝襯衫" data-summary="summary 2" data-price="869" data-quantity="1" data-image="img/衣服/sg-11134201-7qvg7-lh4ox106ciuc43.jpeg">加入購物車</button>
+              </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="card">
+              <img src="/img/衣服/12.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">刺繡翻領POLO衫</h5>
+                <p id="pice">$980</p>
+                <button class="btn btn-secondary my-cart-btn" data-id="3" data-name="刺繡翻領POLO衫" data-summary="summary 3" data-price="980" data-quantity="1" data-image="/img/衣服/12.jpeg">加入購物車</button>
+              </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="card">
+              <img src="/img/衣服/13.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">格子短袖襯衫男</h5>
+                <p id="pice">$1080</p>
+                <button class="btn btn-secondary my-cart-btn" data-id="4" data-name="格子短袖襯衫男" data-summary="summary 4" data-price="1080" data-quantity="1" data-image="/img/衣服/13.jpeg">加入購物車</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">短袖欧美運動健身</h5>
+                  <p id="pice">$850</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="5" data-name="短袖欧美運動健身" data-summary="summary 5" data-price="850" data-quantity="1" data-image="/img/衣服/1.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">復古男韓版大學t </h5>
+                  <p id="pice">$750</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="6" data-name="復古男韓版大學t" data-summary="summary 6" data-price="750" data-quantity="1" data-image="/img/衣服/2.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/3.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">麂皮絨古短袖男</h5>
+                  <p id="pice">$820</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="7" data-name="麂皮絨古短袖男" data-summary="summary 7" data-price="820" data-quantity="1" data-image="/img/衣服/2.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/4.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">ins復古百搭體恤</h5>
+                  <p id="pice">$920</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="8" data-name="ins復古百搭體恤" data-summary="summary 8" data-price="920" data-quantity="1" data-image="/img/衣服/4.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    
+      </div>
+    </div>
+    <!-- 外套 -->
+    <div class="coat">
+      <h2 class="blockTitle">外套</h2>
+      <div class="row">
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/1f1fa2c8755fece80767fe7c0234ee16.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">毛呢格子外套男</h5>
+                  <p id="pice">$1200</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="9" data-name="毛呢格子外套男" data-summary="summary 9" data-price="1200" data-quantity="1" data-image="/img/衣服/1f1fa2c8755fece80767fe7c0234ee16.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/5.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">美式工裝外套</h5>
+                  <p id="pice">$1350</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="10" data-name="美式工裝外套" data-summary="summary 10" data-price="1350" data-quantity="1" data-image="/img/衣服/5.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/6.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">棒球外套男</h5>
+                  <p id="pice">$1490</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="11" data-name="棒球外套男" data-summary="summary 11" data-price="1490" data-quantity="1" data-image="/img/衣服/6.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/7.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">韓版外套男</h5>
+                  <p id="pice">$1870</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="12" data-name="韓版外套男" data-summary="summary 12" data-price="1870" data-quantity="1" data-image="/img/衣服/7.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/8.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">哈靈頓外套</h5>
+                  <p id="pice">$1650</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="13" data-name="哈靈頓外套" data-summary="summary 13" data-price="1650" data-quantity="1" data-image="/img/衣服/8.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/9.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">修身防風夾克</h5>
+                  <p id="pice">$1880</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="14" data-name="修身防風夾克" data-summary="summary 14" data-price="1880" data-quantity="1" data-image="/img/衣服/9.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/10.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">牛仔夾克男</h5>
+                  <p id="pice">$1280</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="15" data-name="牛仔夾克男" data-summary="summary 15" data-price="1280" data-quantity="1" data-image="/img/衣服/10.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/14.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">底特律獵裝夾克</h5>
+                  <p id="pice">$1400</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="16" data-name="底特律獵裝夾克" data-summary="summary 16" data-price="1400" data-quantity="1" data-image="/img/衣服/14.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 褲子 -->
+    <div class="pant">
+      <h2 class="blockTitle">褲子</h2>
+      <div class="row">
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/01.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">燈芯絨直筒長褲</h5>
+                  <p id="pice">$890</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="17" data-name="燈芯絨直筒長褲" data-summary="summary 17" data-price="890" data-quantity="1" data-image="/img/衣服/01.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/02.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">軍綠工裝褲</h5>
+                  <p id="pice">$640</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="18" data-name="軍綠工裝褲" data-summary="summary 18" data-price="640" data-quantity="1" data-image="/img/衣服/02.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/03.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">卡其修身直筒褲</h5>
+                  <p id="pice">$820</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="19" data-name="卡其修身直筒褲" data-summary="summary 19" data-price="820" data-quantity="1" data-image="/img/衣服/03.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/04.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">闊腿褲</h5>
+                  <p id="pice">$750</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="20" data-name="闊腿褲" data-summary="summary 20" data-price="750" data-quantity="1" data-image="/img/衣服/04.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/05.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">休閒落地西裝褲</h5>
+                  <p id="pice">$700</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="21" data-name="休閒落地西裝褲" data-summary="summary 21" data-price="700" data-quantity="1" data-image="/img/衣服/05.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/96.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">巴黎西裝褲</h5>
+                  <p id="pice">$1200</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="22" data-name="巴黎西裝褲" data-summary="summary 22" data-price="1200" data-quantity="1" data-image="/img/衣服/96.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/08.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">港風休閒褲</h5>
+                  <p id="pice">$650</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="23" data-name="港風休閒褲" data-summary="summary 23" data-price="650" data-quantity="1" data-image="/img/衣服/08.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card">
+                <img src="/img/衣服/07.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">日系繭型工作褲</h5>
+                  <p id="pice">$780</p>
+                  <button class="btn btn-secondary my-cart-btn" data-id="24" data-name="日系繭型工作褲" data-summary="summary 24" data-price="780" data-quantity="1" data-image="/img/衣服/07.jpeg">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <!-- 結尾 -->
+  <div class="container-fluid bt">
+    <div class="row">
+      <div class="col-6">
+        <img src="/img/K&G - MarkMaker Logo.png" alt="" class="bt-logo">
+      </div>
+      <div class="col-6 bt-text">
+        <p>地址：嘉義市光彩街562號</p>
+        <p>聯絡電話：0922-222-222</p>
+        <p>信箱：xxxxxx@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script type='text/javascript' src="js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="js/jquery.mycart.js"></script>
+  <script type="text/javascript">
+  $(function () {
+
+    var goToCartIcon = function($addTocartBtn){
+      var $cartIcon = $(".my-cart-icon");
+      var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+      $addTocartBtn.prepend($image);
+      var position = $cartIcon.position();
+      $image.animate({
+        top: position.top,
+        left: position.left
+      }, 500 , "linear", function() {
+        $image.remove();
+      });
+    }
+
+    $('.my-cart-btn').myCart({
+      currencySymbol: '$',
+      classCartIcon: 'my-cart-icon',
+      classCartBadge: 'my-cart-badge',
+      classProductQuantity: 'my-product-quantity',
+      classProductRemove: 'my-product-remove',
+      classCheckoutCart: 'my-cart-checkout',
+      affixCartIcon: true,
+      showCheckoutModal: true,
+      numberOfDecimals: 2,
+      cartItems: [
+        
+      ],
+      clickOnAddToCart: function($addTocart){
+        goToCartIcon($addTocart);
+      },
+      afterAddOnCart: function(products, totalPrice, totalQuantity) {
+        console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+      },
+      clickOnCartIcon: function($cartIcon, products, totalPrice, totalQuantity) {
+        console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+      },
+      checkoutCart: function(products, totalPrice, totalQuantity) {
+        var checkoutString = "Total Price: " + totalPrice + "\nTotal Quantity: " + totalQuantity;
+        checkoutString += "\n\n id \t name \t summary \t price \t quantity \t image path";
+        $.each(products, function(){
+          checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.summary + " \t " + this.price + " \t " + this.quantity + " \t " + this.image);
+        });
+        alert(checkoutString)
+        console.log("checking out", products, totalPrice, totalQuantity);
+      },
+      getDiscountPrice: function(products, totalPrice, totalQuantity) {
+        console.log("calculating discount", products, totalPrice, totalQuantity);
+        return totalPrice * 0.5;
+      }
+    });
+
+    $("#addNewProduct").click(function(event) {
+      var currentElementNo = $(".row").children().length + 1;
+      $(".row").append('<div class="col-md-3 text-center"><img src="images/img_empty.png" width="150px" height="150px"><br>product ' + currentElementNo + ' - <strong>$' + currentElementNo + '</strong><br><button class="btn btn-danger my-cart-btn" data-id="' + currentElementNo + '" data-name="product ' + currentElementNo + '" data-summary="summary ' + currentElementNo + '" data-price="' + currentElementNo + '" data-quantity="1" data-image="images/img_empty.png">Add to Cart</button><a href="#" class="btn btn-info">Details</a></div>')
+    });
+  });
+  </script>
+
+</body>
+
+</html>
